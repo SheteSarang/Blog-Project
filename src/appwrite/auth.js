@@ -1,7 +1,7 @@
 import conf from '../conf/conf.js';
 import { Client, Account, ID } from "appwrite";
 
-
+// service export karne se acha uska object nikalke do. Hum direct value access kar payenge
 export class AuthService {
     client = new Client();
     account;
@@ -43,7 +43,7 @@ export class AuthService {
     }
     async logout(){
         try{
-            await this.account.deleteSession('current');
+            await this.account.deleteSessions('current');
         }
         catch(error){
             throw error;
